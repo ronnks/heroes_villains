@@ -26,4 +26,4 @@ const HeroSchema = new Schema({
   },
 });
 
-module.export = { HeroSchema };
+module.exports = { HeroSchema };

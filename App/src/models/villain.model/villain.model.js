@@ -43,4 +43,4 @@ VillainSchema.statics.findByName(
   new mongoose.model("Villain", VillainSchema)
 );
 
-module.export = { VillainSchema };
+module.exports = { VillainSchema };

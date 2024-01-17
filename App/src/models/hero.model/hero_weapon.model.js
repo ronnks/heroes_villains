@@ -16,4 +16,4 @@ const HeroWeaponSchema = new Schema({
   ],
 });
 
-module.export = { HeroWeaponSchema };
+module.exports = { HeroWeaponSchema };

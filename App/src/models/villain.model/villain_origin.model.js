@@ -9,7 +9,7 @@ const VillainOriginSchema = new Schema({
     type: String,
     required: true,
   },
-  Villain_name: {
+  villain_name: {
     type: String,
     required: true,
   },
@@ -23,4 +23,4 @@ const VillainOriginSchema = new Schema({
   },
 });
 
-module.export = { VillainOriginSchema };
+module.exports = { VillainOriginSchema };

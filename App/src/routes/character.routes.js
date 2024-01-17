@@ -1,7 +1,22 @@
 import { Router } from "express";
 import controller from "../controllers/character.controller";
+import {
+  HeroHandler,
+  HeroGroupHandler,
+  HeroWeaponHandler,
+} from "../controllers.";
 
 const characterRouter = Router();
+
+characterRouter
+  .route("/heroes")
+  .get(controller.HeroHandler.getAllHeroesHandler)
+  .post(controller.HeroHandler.createHeroHandler);
+
+characterRouter
+  .route("/heroes_group")
+  .get(controller.HeroHandler.getAllHeroesHandler)
+  .post(controller.HeroHandler.createHeroHandler);
 
 characterRouter
   .route("/heroes")

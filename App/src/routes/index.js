@@ -3,6 +3,6 @@ import characterRouter from "./character.routes";
 
 const router = Router();
 
-router.use("http://localhost:3001/characters", characterRouter);
+router.use("/characters", characterRouter);
 
 export default router;

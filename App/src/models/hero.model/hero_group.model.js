@@ -28,4 +28,4 @@ const HeroGroupSchema = new Schema({
   },
 });
 
-module.export = { HeroGroupSchema };
+module.exports = { HeroGroupSchema };

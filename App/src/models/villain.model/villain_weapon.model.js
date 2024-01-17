@@ -16,4 +16,4 @@ const VillainWeaponSchema = new Schema({
   ],
 });
 
-module.export = { VillainWeaponSchema };
+module.exports = { VillainWeaponSchema };
