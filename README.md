@@ -2,7 +2,13 @@
 
 You will be using this app to explore the architecture of a backend MERN Application.
 
-The app entirely explores the service of using REST API to do the CRUD operations.
+The application entirely explores the service of using REST API to do the CRUD operations.
+
+## Downloading the application
+
+```
+Clone the repo from my repository `code` -> `SSH` -> to your `local machine`.
+```
 
 ## Running the application
 
