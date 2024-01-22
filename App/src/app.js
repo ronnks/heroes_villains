@@ -1,6 +1,14 @@
 import express from "express";
 import cors from "cors";
-import router from "./routes";
+import {
+  router,
+  heroRouter,
+  heroGroupRouter,
+  heroWeaponRouter,
+  villainRouter,
+  villainOriginRouter,
+  villainWeaponRouter,
+} from "./routes";
 import {
   connectToMongooseEntriesDB,
   connectToMongooseEntries2DB,
@@ -14,6 +22,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(router);
+app.use(heroRouter);
+app.use(heroGroupRouter);
+app.use(heroWeaponRouter);
+app.use(villainRouter);
+app.use(villainOriginRouter);
+app.use(villainWeaponRouter);
 
 app.all("*", (req, res, next) => next({ name: "NotFoundError" }));
 

@@ -1,43 +1,95 @@
 import { Router } from "express";
-import controller from "../controllers/character.controller";
 import {
   HeroHandler,
   HeroGroupHandler,
   HeroWeaponHandler,
-} from "../controllers.";
+} from "../controllers/hero.controller/hero.controller.exports";
+import {
+  VillainHandler,
+  VillainOriginHandler,
+  VillainWeaponHandler,
+} from "../controllers/villain.controller/villain.controller.exports";
 
 const characterRouter = Router();
+const characterHeroRouter = Router();
+const characterHeroGroupRouter = Router();
+const characterHeroWeaponRouter = Router();
+const characterVillainRouter = Router();
+const characterVillainOriginRouter = Router();
+const characterVillainWeaponRouter = Router();
 
 characterRouter
   .route("/heroes")
-  .get(controller.HeroHandler.getAllHeroesHandler)
-  .post(controller.HeroHandler.createHeroHandler);
+  .get(HeroHandler.HeroHandler.getAllHeroesHandler)
+  .post(HeroHandler.HeroHandler.createHeroHandler);
 
 characterRouter
-  .route("/heroes_group")
-  .get(controller.HeroHandler.getAllHeroesHandler)
-  .post(controller.HeroHandler.createHeroHandler);
+  .route("/heroe_group")
+  .get(HeroGroupHandler.HeroGroupHandler.getAllHeroGroupsHandler)
+  .post(HeroGroupHandler.HeroGroupHandler.createHeroGroupHandler);
 
 characterRouter
-  .route("/heroes")
-  .get(controller.HeroHandler.getAllHeroesHandler)
-  .post(controller.HeroHandler.createHeroHandler);
+  .route("/heroe_weapon")
+  .get(HeroWeaponHandler.HeroWeaponHandler.getAllHeroWeaponHandler)
+  .post(HeroWeaponHandler.HeroWeaponHandler.createHeroWeaponHandler);
 
 characterRouter
   .route("/villains")
-  .get(controller.VillainHandler.getAllVillainsHandler)
-  .post(controller.VillainHandler.createVillainHandler);
+  .get(VillainHandler.VillainHandler.getAllVillainsHandler)
+  .post(VillainHandler.VillainHandler.createVillainHandler);
 
 characterRouter
-  .route("/:id")
-  .get(controller.HeroHandler.getHeroByIdHandler)
-  .put(controller.HeroHandler.updateHeroByIdHandler)
-  .delete(controller.HeroHandler.deleteHeroHandler);
+  .route("/villain_origin")
+  .get(VillainOriginHandler.VillainOriginHandler.getAllVillainOriginsHandler)
+  .post(VillainOriginHandler.VillainOriginHandler.createVillainOriginHandler);
 
 characterRouter
-  .route("/:id")
-  .get(controller.VillainHandler.getVillainByIdHandler)
-  .put(controller.VillainHandler.updateVillainByIdHandler)
-  .delete(controller.VillainHandler);
+  .route("/villain_weapon")
+  .get(VillainWeaponHandler.VillainWeaponHandler.createVillainWeaponHandler)
+  .post(VillainWeaponHandler.VillainWeaponHandler.createVillainWeaponHandler);
 
-export default characterRouter;
+characterHeroRouter
+  .route("/:id")
+  .get(HeroHandler.HeroHandler.getHeroByIdHandler)
+  .put(HeroHandler.HeroHandler.updateHeroByIdHandler)
+  .delete(HeroHandler.HeroHandler.deleteHeroHandler);
+
+characterHeroGroupRouter
+  .route("/:id")
+  .get(HeroGroupHandler.HeroGroupHandler.getHeroGroupByIdHandler)
+  .put(HeroGroupHandler.HeroGroupHandler.updateHeroGroupByIdHandler)
+  .delete(HeroGroupHandler.HeroGroupHandler.deleteHeroGroupHandler);
+
+characterHeroWeaponRouter
+  .route("/:id")
+  .get(HeroWeaponHandler.HeroWeaponHandler.getHeroWeaponByIdHandler)
+  .put(HeroWeaponHandler.HeroWeaponHandler.updateHeroWeaponByIdHandler)
+  .delete(HeroWeaponHandler.HeroWeaponHandler.deleteHeroWeaponHandler);
+
+characterVillainRouter
+  .route("/:id")
+  .get(VillainOriginHandler.VillainOriginHandler.getVillainOriginByIdHandler)
+  .put(VillainOriginHandler.VillainOriginHandler.updateVillainOriginByIdHandler)
+  .delete(VillainOriginHandler.VillainOriginHandler.deleteVillainOriginHandler);
+
+characterVillainOriginRouter
+  .route("/:id")
+  .get(VillainHandler.VillainHandler.getVillainByIdHandler)
+  .put(VillainHandler.VillainHandler.updateVillainByIdHandler)
+  .delete(VillainHandler.VillainHandler.deleteVillainHandler);
+
+characterVillainWeaponRouter
+  .route("/:id")
+  .get(VillainWeaponHandler.VillainWeaponHandler.getVillainWeaponByIdHandler)
+  .put(VillainWeaponHandler.VillainWeaponHandler.updateVillainWeaponByIdHandler)
+  .delete(VillainWeaponHandler.VillainWeaponHandler.deleteVillainWeaponHandler);
+
+export {
+  characterRouter,
+  characterHeroRouter,
+  characterHeroGroupRouter,
+  characterHeroWeaponRouter,
+  characterVillainRouter,
+  characterVillainOriginRouter,
+  characterVillainWeaponRouter,
+};
